@@ -29,15 +29,11 @@
 
         var layer = new google.maps.FusionTablesLayer({
           query: {
-            select: '/'geometry'/',
+            select: '/'Local Authority'/',
             from: '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-',
-          },
-          styles: [{
-            polygonOptions: {
-              fillColor: '#00FF00',
-              fillOpacity: 0.3
-            }
-            }]
+            where: 'Local Authority = Gwynedd'
+          }
+          
         });
         layer.setMap(map);
       }
