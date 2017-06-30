@@ -33,11 +33,10 @@
             from: '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-',
              where: "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27"
           },
-           {
-            where: "Income: Council Tax (ŁMillions) > 500',
-            polygonOptions: {
-              fillColor: '#0000FF'
-            }
+           options: {
+        styleId: 2,
+        templateId: 2
+      }
         });
         layer.setMap(map);
       }
@@ -45,5 +44,35 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQzcUq5Pfafx-DrIP6m063PDGtywrtbpA&callback=initMap">
     </script>
+     <div id="googft-mapCanvas"></div>
+  <input id="googft-legend-open" style="display:none" type="button" value="Legend"></input>
+  <div id="googft-legend">
+    <p id="googft-legend-title">Income: Council Tax per head of population (Ł)</p>
+    <div>
+      <span class="googft-legend-swatch" style="background-color: #ff0000"></span>
+      <span class="googft-legend-range">284.98 to 360.898</span>
+    </div>
+    <div>
+      <span class="googft-legend-swatch" style="background-color: #ff9900"></span>
+      <span class="googft-legend-range">360.898 to 436.816</span>
+    </div>
+    <div>
+      <span class="googft-legend-swatch" style="background-color: #ffff00"></span>
+      <span class="googft-legend-range">436.816 to 512.734</span>
+    </div>
+    <div>
+      <span class="googft-legend-swatch" style="background-color: #00ff00"></span>
+      <span class="googft-legend-range">512.734 to 588.652</span>
+    </div>
+    <div>
+      <span class="googft-legend-swatch" style="background-color: #00ffff"></span>
+      <span class="googft-legend-range">588.652 to 664.57</span>
+    </div>
+    <div class="googft-legend-source">
+      <a href="data?docid=1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-" target="_blank">Source</a>
+    </div>
+    <input id="googft-legend-close" style="display:none" type="button" value="Hide"></input>
+  </div>
+
   </body>
 </html>
