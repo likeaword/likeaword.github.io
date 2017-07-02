@@ -20,28 +20,24 @@
       }
     </style>
     
-    <script>      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map-canvas'), {
-          center: {
-            lat: 52.2397355,
-            lng: -3.392428
-          },
-          zoom: 8
-        });
-		     var layer = new google.maps.FusionTablesLayer({
-          query: {
-            select: 'Geometry',
-            from: '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-',
-            where: "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27"
-          },
-          options: {
-            styleId: 2,
-            templateId: 2
-          }
-		layer.setMap(map);
-        });
-        }
+    <script>     function initMap() {
+  var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: {lat: 10, lng: -140},
+    zoom: 3
+  });
 
+  var layer = new google.maps.FusionTablesLayer({
+    query: {
+      select: 'location',
+      from: '1xWyeuAhIFK_aED1ikkQEGmR8mINSCJO9Vq-BPQ'
+    },
+    heatmap: {
+      enabled: true
+    }
+  });
+
+  layer.setMap(map);
+}
        
         
       
