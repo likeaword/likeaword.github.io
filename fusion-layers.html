@@ -20,33 +20,43 @@
       }
     </style>
     
-    <script>     function initMap() {
+    <script>     
+function initMap() {
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: {
-            lat: 52.2397355,
-            lng: -3.392428
-          },
-          zoom: 8
+      lat: 52.2397355,
+      lng: -3.392428
+    },
+    zoom: 8
   });
 
   var layer;
   var tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
   var querystring = "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27";
-		    
-layer  = new google.maps.FusionTablesLayer({
+
+  layer = new google.maps.FusionTablesLayer({
     query: {
       select: 'Geometry',
       from: tableid,
-            where: querystring
+      where: querystring
     },
-   options: {
-            styleId: 2,
-            templateId: 2
-          }
+    options: {
+      styleId: 2,
+      templateId: 2
+    }
   });
 
   layer.setMap(map);
 }
+
+	function changeLayer() {
+  var checkboxstatus = document.getElementById("switch");
+  if (checkboxstantus.value) = "Show" {
+    layer.setMap(map); // turn on. 
+  } else {
+    layer.setMap(null); // turn off 
+  }
+}    
        
         
       
@@ -61,7 +71,7 @@ layer  = new google.maps.FusionTablesLayer({
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div style="align:left;width:150px:height:500px;">
     <form action="">
-<input id="switch" type="checkbox" name="option" value="Show">Show layer
+<input id="switch" type="checkbox" name="option" value="Show" onlick="changeLayer();>Show layer
 </form>
     
     </div>
