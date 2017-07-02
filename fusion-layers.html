@@ -19,7 +19,13 @@
       }
     </style>
     
-    <script>     
+    <script>    
+	    
+	    var layer;
+	    var tableid;
+	    var querystring;
+	    
+	    
 	    function mapRefresh() {
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: {
@@ -29,9 +35,7 @@
     zoom: 8
   });
   // console.log('Hello world!');
-  var layer;
-  var tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
-  var querystring = "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27";
+  
   layer = new google.maps.FusionTablesLayer({
       query: {
         select: 'Geometry',
@@ -82,7 +86,9 @@ mapHide();
 }
 if (document.getElementById("20089").checked)
 {	    
-		   
+
+  tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
+  querystring = "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27";
 	mapRefresh();		 
 	
 		    }
