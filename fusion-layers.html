@@ -15,7 +15,10 @@
  #controls {
         height: 500px;
 	width: 100px
-	float: left;
+	position: absolute;
+    right: 0px;
+    border: 3px solid #73AD21;
+    padding: 10px;	 
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -140,12 +143,12 @@ querystring = " col2>>0 >= '2013 Apr 1' and col2>>0 <= '2014 Mar 31'";
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div id="controls">
     <form action="">
-<input id="20089" type="radio" name="option" >2008/9
-<input id="200910" type="radio" name="option" >2009/10
-<input id="201011" type="radio" name="option" >2010/11
-<input id="201112" type="radio" name="option" >2011/12
-<input id="201213" type="radio" name="option" >2012/13
-<input id="201314" type="radio" name="option" >2013/14
+	    <input id="20089" type="radio" name="option" >2008/9</ br>
+<input id="200910" type="radio" name="option" >2009/10</ br>
+<input id="201011" type="radio" name="option" >2010/11</ br>
+<input id="201112" type="radio" name="option" >2011/12</ br>
+<input id="201213" type="radio" name="option" >2012/13</ br>
+<input id="201314" type="radio" name="option" >2013/14</ br>
 </form>
 	    <button onclick="evaluateMapState()">Update map</button>
     
