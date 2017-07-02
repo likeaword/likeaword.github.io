@@ -49,12 +49,7 @@ layer  = new google.maps.FusionTablesLayer({
    // function check() {
    //  document.getElementById("myCheck").checked = true;
 //     }     
-   function toggleLayer(){
-   
-   layer.setMap(map);
-   
-   }  
-      
+       
 		 
     </script>
     <script async defer
@@ -66,7 +61,7 @@ layer  = new google.maps.FusionTablesLayer({
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div style="align:left;width:150px:height:500px;">
     <form action="">
-<input id="myCheck" type="checkbox" name="option" onchange="toggleLayer()">Show layer
+<input id="myCheck" type="checkbox" name="option" onchange="layer.setMap(map)">Show layer
 </form>
     
     </div>
