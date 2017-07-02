@@ -42,20 +42,6 @@
         });
         layer.setMap(map);
       }
-
-      function changeLayer() {
-
-
-        if (document.getElementById("switch").checked == true) {
-          if (layer.getMap() == null) {
-            layer.setMap(map);
-          }
-        }
-
-        if (document.getElementById("switch").checked == false) {
-          layer.setMap(null);
-        }; /*layersetoff*/
-
 		 
     </script>
     <script async defer
@@ -67,7 +53,7 @@
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div style="align:left;width:150px:height:500px;">
     <form action="">
-<input id="switch" type="checkbox" name="option" value="Show" onclick="changeLayer();>Show layer
+<input id="switch" type="checkbox" name="option" value="Show">Show layer
 </form>
     
     </div>
