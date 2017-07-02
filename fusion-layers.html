@@ -79,13 +79,6 @@
 		    		    
 }	    
 function evaluateMapState(){
-if (document.getElementById("200910").checked){
-	
-tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
-querystring = " col2>>0 >= '2009 Apr 1' and col2>>0 <= '2010 Mar 31'";
-	mapRefresh();
-	
-}
 if (document.getElementById("20089").checked)
 {	    
 
@@ -94,6 +87,22 @@ if (document.getElementById("20089").checked)
 	mapRefresh();		 
 	
 		    }
+if (document.getElementById("200910").checked){
+	
+tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
+querystring = " col2>>0 >= '2009 Apr 1' and col2>>0 <= '2010 Mar 31'";
+	mapRefresh();
+	
+}
+if (document.getElementById("201011").checked){
+	
+tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
+querystring = " col2>>0 >= '2010 Apr 1' and col2>>0 <= '2011 Mar 31'";
+	mapRefresh();
+	
+}
+
+
 
 }
     </script>
@@ -108,6 +117,10 @@ if (document.getElementById("20089").checked)
     <form action="">
 <input id="20089" type="radio" name="option" >2008/9
 <input id="200910" type="radio" name="option" >2009/10
+<input id="2001011" type="radio" name="option" >2010/11
+<input id="2001112" type="radio" name="option" >2011/12
+<input id="2001213" type="radio" name="option" >2012/13
+<input id="2001314" type="radio" name="option" >2013/14
 </form>
 	    <button onclick="evaluateMapState()">Update map</button>
     
