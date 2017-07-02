@@ -20,10 +20,12 @@
       }
     </style>
     
-    <script>
-      function initMap() {
+    <script>      function initMap() {
         var map = new google.maps.Map(document.getElementById('map-canvas'), {
-          center: {lat: 52.2397355, lng: -3.392428},
+          center: {
+            lat: 52.2397355,
+            lng: -3.392428
+          },
           zoom: 8
         });
 
@@ -31,15 +33,30 @@
           query: {
             select: 'Geometry',
             from: '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-',
-             where: "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27"
+            where: "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27"
           },
-           options: {
-        styleId: 2,
-        templateId: 2
-      }
+          options: {
+            styleId: 2,
+            templateId: 2
+          }
         });
         layer.setMap(map);
       }
+
+      function changeLayer() {
+
+
+        if (document.getElementById("switch").checked == true) {
+          if (layer.getMap() == null) {
+            layer.setMap(map);
+          }
+        }
+
+        if (document.getElementById("switch").checked == false) {
+          layer.setMap(null);
+        } /*layersetoff*/
+
+		 
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQzcUq5Pfafx-DrIP6m063PDGtywrtbpA&callback=initMap">
@@ -50,7 +67,7 @@
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div style="align:left;width:150px:height:500px;">
     <form action="">
-<input type="checkbox" name="option" value="Show">Show layer
+<input id="switch" type="checkbox" name="option" value="Show" onclick="changeLayer();>Show layer
 </form>
     
     </div>
