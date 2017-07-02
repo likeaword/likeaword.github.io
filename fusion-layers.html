@@ -20,7 +20,7 @@
     </style>
     
     <script>     
-	    function check() {
+	    function mapRefresh() {
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: {
       lat: 52.2397355,
@@ -56,7 +56,7 @@
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div style="align:left;width:150px:height:500px;">
     <form action="">
-<input id="myCheck" type="checkbox" name="option" onchange="check()">Show layer
+<input id="myCheck" type="checkbox" name="option" onchange="mapRefresh()">Show layer
 </form>
     
     </div>
