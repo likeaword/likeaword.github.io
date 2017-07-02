@@ -18,6 +18,12 @@
 	width: 100px
 	float: left;	 
       }
+	    #bucket1{
+	    height:10px;
+	    width:10px;
+	    postion:static;
+	    background:ff0000;
+	    }
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
@@ -140,8 +146,9 @@ querystring = " col2>>0 >= '2013 Apr 1' and col2>>0 <= '2014 Mar 31'";
 
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div id="controls">
+	    <h1> Select the financial year</h1>
     <form action="">
-	    <input id="20089" type="radio" name="option" >2008/9</ br>
+	    <input id="20089" type="radio" name="option" >2008/9<br>
 <input id="200910" type="radio" name="option" >2009/10<br>
 <input id="201011" type="radio" name="option" >2010/11<br>
 <input id="201112" type="radio" name="option" >2011/12<br>
@@ -149,6 +156,19 @@ querystring = " col2>>0 >= '2013 Apr 1' and col2>>0 <= '2014 Mar 31'";
 <input id="201314" type="radio" name="option" >2013/14<br>
 </form>
 	    <button onclick="evaluateMapState()">Update map</button>
+	    <h1>Legend</h1>
+	    <h2>Council Tax Income per head of population</h2>
+	    <div id="bucket1"></div>£285 - £361<br>
+	    <div id="bucket2"></div>£361 - £437<br>
+	    <div id="bucket3"></div>£437 - £513<br>
+	    <div id="bucket4"></div>£513 - £589<br>
+	    <div id="bucket5"></div>£589 - £665<br>
+	    
+	    
+	    
+	    
+	    
+	    
     
     </div>
   </body>
