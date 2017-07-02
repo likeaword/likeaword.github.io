@@ -27,6 +27,10 @@
           },
           zoom: 8
   });
+		    function check() {
+    document.getElementById("myCheck").checked = true;
+}
+		    
   var layer;
   var tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
   var querystring = "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27";
@@ -58,7 +62,7 @@ layer  = new google.maps.FusionTablesLayer({
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div style="align:left;width:150px:height:500px;">
     <form action="">
-<input id="switch" type="checkbox" name="option">Show layer
+<input id="myCheck" type="checkbox" name="option">Show layer
 </form>
     
     </div>
