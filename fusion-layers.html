@@ -45,16 +45,16 @@
     }),
 	   layer.setMap(map);
     
-if (document.getElementById("myCheck").checked = false){
+if (document.getElementById("myCheckHide").checked = true){
 	
 
-alert('Evaluated as NOT checked')
+alert('Evaluated as do not show')
 	
 }
-if (document.getElementById("myCheck").checked = true) {
+if (document.getElementById("myCheckShow").checked = true) {
 		    
 		   
-			    alert('Evaluated as checked')
+			    alert('Evaluated as show')
 		    }
 		    
 }
@@ -68,7 +68,8 @@ if (document.getElementById("myCheck").checked = true) {
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div style="align:left;width:150px:height:500px;">
     <form action="">
-<input id="myCheck" type="checkbox" name="option" onchange="mapRefresh()">Show layer
+<input id="myCheckShow" type="radio" name="option" onchange="mapRefresh()">Show
+<input id="myCheckHide" type="radio" name="option" onchange="mapRefresh()">Hide
 </form>
     
     </div>
