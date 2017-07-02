@@ -29,10 +29,13 @@
           zoom: 8
   });
 
-  var layer = new google.maps.FusionTablesLayer({
+  var layer;
+  var tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
+		    
+layer  = new google.maps.FusionTablesLayer({
     query: {
       select: 'Geometry',
-      from: '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-',
+      from: tableid,
             where: "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27"
     },
    options: {
