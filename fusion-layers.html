@@ -28,41 +28,26 @@
     },
     zoom: 8
   });
+  // console.log('Hello world!');
 
-// console.log('Hello world!');
-		   
   var layer;
   var tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
   var querystring = "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27";
-
   layer = new google.maps.FusionTablesLayer({
-    query: {
-      select: 'Geometry',
-      from: tableid,
-      where: querystring
-    },
-    options: {
-      styleId: 2,
-      templateId: 2
-    }
-  }),
-// var stateCheck = document.getElementById("myCheck").checked
-		    
-// if (stateCheck = false;){
-	  
-		    layer.setMap(map);
-	
-	
-//	    } 
-//		    else 
-//		    {
-//	    layer.setMap(null);
-//	    }
-// }
-// function check() {
-//  
-}
+      query: {
+        select: 'Geometry',
+        from: tableid,
+        where: querystring
+      },
+      options: {
+        styleId: 2,
+        templateId: 2
+      }
+    }),
 
+    layer.setMap(map);
+
+}
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQzcUq5Pfafx-DrIP6m063PDGtywrtbpA&callback=initMap">
