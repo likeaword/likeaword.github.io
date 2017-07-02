@@ -20,7 +20,12 @@
       }
     </style>
     
-    <script>     
+    <script>  
+	    
+	var layer;
+  var tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
+  var querystring = "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27";
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map-canvas'), {
     center: {
@@ -30,10 +35,7 @@ function initMap() {
     zoom: 8
   });
 
-  var layer;
-  var tableid = '1E0ENRSUkCtzrMWeHuVUdgIcOD4-yaWcHyPBGf_u-';
-  var querystring = "col2\x3e\x3e0 \x3e\x3d \x272008 Jan 1\x27 and col2\x3e\x3e0 \x3c\x3d \x272009 Jan 1\x27";
-
+  
   layer = new google.maps.FusionTablesLayer({
     query: {
       select: 'Geometry',
@@ -71,7 +73,7 @@ function initMap() {
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
     <div style="align:left;width:150px:height:500px;">
     <form action="">
-<input id="switch" type="checkbox" name="option" value="Show" onlick="changeLayer();>Show layer
+<input id="switch" type="checkbox" name="option" value="Show" onlick="changeLayer()";>Show layer
 </form>
     
     </div>
