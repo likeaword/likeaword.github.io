@@ -10,6 +10,12 @@
        * element that contains the map. */
       #map-canvas {
         height: 500px;
+	float: right;
+      }
+ #controls {
+        height: 500px;
+	width: 100px
+	float: left;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -132,7 +138,7 @@ querystring = " col2>>0 >= '2013 Apr 1' and col2>>0 <= '2014 Mar 31'";
   <body>
 
 <div style="align:right;width:500px;height:500px;" id="map-canvas"></div>
-    <div style="align:left;width:150px:height:500px;">
+    <div id="controls">
     <form action="">
 <input id="20089" type="radio" name="option" >2008/9
 <input id="200910" type="radio" name="option" >2009/10
