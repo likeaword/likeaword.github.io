@@ -43,21 +43,24 @@
         templateId: 2
       }
     }),
-	   
+ layer.setMap(map);
 
-		    
+		    		    
+}
+	    
+function evaluateMapState(){
 if (document.getElementById("myCheckHide").checked){
 	
-layer.setMap(null);
+alert("Selected Hide");
 	
 }
 if (document.getElementById("myCheckShow").checked)
 {	    
 		   
-			  layer.setMap(map);
+	mapRefresh();		 
 	
 		    }
-		    
+
 }
     </script>
     <script async defer
@@ -72,7 +75,7 @@ if (document.getElementById("myCheckShow").checked)
 <input id="myCheckShow" type="radio" name="option" >Show
 <input id="myCheckHide" type="radio" name="option" >Hide
 </form>
-	    <button onclick="mapRefresh()">Update map</button>
+	    <button onclick="evaluateMapState()">Update map</button>
     
     </div>
   </body>
