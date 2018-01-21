@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Fusion Tables layers</title>
+ 
+    
+  </head>
+  <body>
+const endpointUrl = 'https://query.wikidata.org/sparql',
+      sparqlQuery = `SELECT ?public_art ?creator ?creatorLabel WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+  ?public_art wdt:P31 wd:Q557141.
+  ?public_art wdt:P131* wd:Q23129.
+  OPTIONAL {  }
+  OPTIONAL { ?public_art wdt:P170 ?creator. }
+}
+LIMIT 100`,
+      fullUrl = endpointUrl + '?query=' + encodeURIComponent( sparqlQuery ),
+      headers = { 'Accept': 'application/sparql-results+json' };
+
+fetch( fullUrl, { headers } ).then( body => body.json() ).then( json => {
+    const { head: { vars }, results } = json;
+    for ( const result of results.bindings ) {
+        for ( const variable of vars ) {
+            console.log( '%s: %o', variable, result[variable] );
+        }
+        console.log( '---' );
+    }
+} );
+    </div>
+  </body>
+</html>
