@@ -7,28 +7,6 @@
  
     
   </head>
-  <body>
-const endpointUrl = 'https://query.wikidata.org/sparql',
-      sparqlQuery = `SELECT ?public_art ?creator ?creatorLabel WHERE {
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-  ?public_art wdt:P31 wd:Q557141.
-  ?public_art wdt:P131* wd:Q23129.
-  OPTIONAL {  }
-  OPTIONAL { ?public_art wdt:P170 ?creator. }
-}
-LIMIT 100`,
-      fullUrl = endpointUrl + '?query=' + encodeURIComponent( sparqlQuery ),
-      headers = { 'Accept': 'application/sparql-results+json' };
-
-fetch( fullUrl, { headers } ).then( body => body.json() ).then( json => {
-    const { head: { vars }, results } = json;
-    for ( const result of results.bindings ) {
-        for ( const variable of vars ) {
-            console.log( '%s: %o', variable, result[variable] );
-        }
-        console.log( '---' );
-    }
-} );
-    </div>
+<iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20%3Fpublic_art%20%3Fcreator%20%3FcreatorLabel%20WHERE%20%7B%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%20%20%3Fpublic_art%20wdt%3AP31%20wd%3AQ557141.%0A%20%20%3Fpublic_art%20wdt%3AP131*%20wd%3AQ23129.%0A%20%20OPTIONAL%20%7B%20%20%7D%0A%20%20OPTIONAL%20%7B%20%3Fpublic_art%20wdt%3AP170%20%3Fcreator.%20%7D%0A%7D%0ALIMIT%20100" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
   </body>
 </html>
